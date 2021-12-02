@@ -4,34 +4,28 @@
 int main()
 {
   FILE *fp = fopen("/Users/fabianbong/Documents/Advent_Of_Code/Day_1/input.txt", "r");
+
   char inpString[100];
 
-  int depth[2000];
-  int n = 0;
+  int n = 2000;
+  int depth[n];
 
+  int count = 0;
   while(fgets(inpString, 100,fp))
   {
-    depth[n] = atoi(inpString);
-    n++;
-  } 
+    depth[count] = atoi(inpString);
+    count++;
+  }
 
   int larger = 0;
 
-  int depthSum[2000-2];
-
-  for(int i = 0; i < n -2 ; i++)
+  for(int i = 1; i < n; i++)
   {
-   depthSum[i] = depth[i] + depth[i+1] + depth[i+2];
-  }
-
-  for(int i = 0; i < n-3; i++)
-  {
-    if(depthSum[i+1] > depthSum[i])
+    if(depth[i] > depth[i-1])
     {
       larger++;
     }
   }
-
 
   printf("%d", larger);
 }
