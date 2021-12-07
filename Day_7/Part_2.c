@@ -54,14 +54,10 @@ int main()
     int ceil = 0;
     for(int i = 0; i < crabCount; i++)
     {
-        for(int k = 1; k <= fabs(meanFloor - crabs[i]); k++)
-        {
-            floor+=k;
-        }
-        for(int k = 1; k <= fabs(meanCeil - crabs[i]); k++)
-        {
-            ceil+=k;
-        }
+        int n = fabs(meanFloor - crabs[i]);
+        floor += (n*(n+1))/2;
+        n = fabs(meanCeil - crabs[i]);
+        ceil += (n*(n+1))/2;
     }
     
     
