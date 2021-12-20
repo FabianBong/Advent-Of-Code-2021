@@ -1,3 +1,5 @@
+# Since I did not have much time on this day, I implemented this solution with heavy help from reddit threads
+
 import itertools
 from collections import Counter
 
